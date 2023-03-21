@@ -9,9 +9,9 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const url = "mongodb://127.0.0.1:27017/wikiDB";
+//const url = "mongodb://127.0.0.1:27017/wikiDB";
 
-mongoose.connect(url);
+mongoose.connect(process.env.url);
 
 const articleSchema = {
     title: String,
